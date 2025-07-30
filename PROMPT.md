@@ -11,3 +11,5 @@
 10. 請開始前端的開發，並寫入flutter這個資料夾
 11. 幫我寫一篇windows安裝flutter的詳細說明，並寫入INSTALL.md
 12. 幫我push當前整包專案到這個git，https://github.com/13g7895123/track_spending.git，且command請勿在提交中新增 Claude 共同作者註腳
+13. 你是一名資深後端工程師，請開始執行後端的部分，需要包含測試，執行完請add commit push且command請勿在提交中新增 Claude 共同作者註腳
+14. 幫我更新專案所有md檔案，有需要更新的請幫我勾選

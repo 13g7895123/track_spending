@@ -133,14 +133,39 @@ PHP_FPM_PORT=9000          # PHP-FPM端口
 
 ## API 端點
 
-基本 API 結構：
-- `GET /api/health` - 健康檢查
-- `POST /api/auth/login` - 使用者登入
+### 認證相關
 - `POST /api/auth/register` - 使用者註冊
+- `POST /api/auth/login` - 使用者登入
+- `POST /api/auth/logout` - 使用者登出
+- `GET /api/auth/user` - 取得當前使用者資訊
+- `PUT /api/auth/profile` - 更新使用者資料
+- `PUT /api/auth/password` - 變更密碼
+
+### 支出相關
 - `GET /api/expenses` - 取得支出列表
 - `POST /api/expenses` - 新增支出
+- `GET /api/expenses/{id}` - 取得支出詳細資訊
+- `PUT /api/expenses/{id}` - 更新支出
+- `DELETE /api/expenses/{id}` - 刪除支出
+- `GET /api/expenses-statistics` - 支出統計資料
+
+### 收入相關
+- `GET /api/incomes` - 取得收入列表
+- `POST /api/incomes` - 新增收入
+- `GET /api/incomes/{id}` - 取得收入詳細資訊
+- `PUT /api/incomes/{id}` - 更新收入
+- `DELETE /api/incomes/{id}` - 刪除收入
+- `GET /api/incomes-statistics` - 收入統計資料
+
+### 標籤相關
 - `GET /api/tags` - 取得標籤列表
-- `POST /api/share` - 分享功能
+- `POST /api/tags` - 建立標籤
+- `GET /api/tags/{id}` - 取得標籤詳細資訊
+- `PUT /api/tags/{id}` - 更新標籤
+- `DELETE /api/tags/{id}` - 刪除標籤
+- `POST /api/tags/{id}/share` - 分享標籤
+- `DELETE /api/tags/{id}/unshare` - 取消分享標籤
+- `GET /api/shared-tags` - 取得與我分享的標籤
 
 ## 安全性功能
 
