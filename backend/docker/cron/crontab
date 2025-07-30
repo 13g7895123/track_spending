@@ -1,0 +1,14 @@
+# Laravel Scheduler
+* * * * * cd /var/www/html && php artisan schedule:run >> /dev/null 2>&1
+
+# 資料庫備份 (每日凌晨 2 點)
+0 2 * * * mysqldump -h mysql -u expense_user -psecure_password_123 expense_tracker | gzip > /var/www/html/storage/backups/backup-$(date +\%Y\%m\%d-\%H\%M\%S).sql.gz
+
+# 清理舊備份 (保留 30 天)
+0 3 * * * find /var/www/html/storage/backups -name "*.sql.gz" -mtime +30 -delete
+
+# 清理 Laravel 日誌 (每週)
+0 0 * * 0 find /var/www/html/storage/logs -name "*.log" -mtime +7 -delete
+
+# SSL 證書更新檢查 (每日)
+0 12 * * * /usr/bin/certbot renew --quiet
