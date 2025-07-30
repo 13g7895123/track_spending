@@ -10,11 +10,47 @@ track_spending/
 ├── CLAUDE.md                   # 詳細專案架構和技術規格
 ├── TODO.md                     # 開發任務清單
 ├── DEVELOP_IOS.md              # iOS開發和VPS部署指南
+├── INSTALL.md                  # Windows Flutter安裝指南
+├── flutter/                    # Flutter前端應用程式
+│   ├── lib/
+│   │   ├── main.dart          # 應用程式入口點
+│   │   ├── app.dart           # 主要應用程式設定
+│   │   ├── core/              # 核心功能
+│   │   │   ├── constants/     # 常數定義
+│   │   │   ├── router/        # 路由配置
+│   │   │   └── theme/         # 主題設定
+│   │   ├── data/              # 資料層
+│   │   │   ├── models/        # 資料模型
+│   │   │   ├── repositories/  # Repository層
+│   │   │   └── services/      # 資料服務
+│   │   └── presentation/      # 展示層 
+│   │       ├── providers/     # 狀態管理
+│   │       └── screens/       # UI頁面
+│   │           ├── auth/      # 認證頁面
+│   │           ├── home/      # 主頁面
+│   │           ├── expenses/  # 支出管理
+│   │           ├── incomes/   # 收入管理
+│   │           ├── tags/      # 標籤管理
+│   │           ├── analytics/ # 數據分析
+│   │           ├── profile/   # 個人資料
+│   │           ├── settings/  # 應用設定
+│   │           └── splash/    # 啟動頁面
+│   └── pubspec.yaml           # Flutter依賴配置
 └── backend/                    # 後端Laravel API
     ├── README.md               # 後端部署指南
     ├── docker-compose.yml      # Docker Compose配置
     ├── .env.example           # 環境變數範本
     ├── .env.docker            # Docker環境變數範本
+    ├── app/                   # Laravel應用程式
+    │   ├── Http/Controllers/  # API控制器
+    │   ├── Models/            # Eloquent模型
+    │   └── Providers/         # 服務提供者
+    ├── database/              # 資料庫相關
+    │   ├── migrations/        # 資料庫遷移
+    │   ├── factories/         # 測試資料工廠
+    │   └── seeders/           # 資料填充
+    ├── tests/                 # 測試檔案
+    │   └── Feature/           # 功能測試
     └── docker/                # Docker配置檔案
         ├── Dockerfile         # Laravel應用程式映像
         ├── nginx/             # Nginx設定
